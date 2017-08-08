@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class DatabaseConnection {
 
-    private static final String CONNECTION_STRING = "jdbc:sqlite:C:\\Users\\Tesfay\\Documents\\NetBeansProjects\\EventOrganizerFramework\\src\\resource\\EventOrganizerDBMS.sqlite";
+    private static final String CONNECTION_STRING = "jdbc:sqlite:C:\\Users\\Parsi\\git\\EventOrganizerFramework\\src\\resourceEventOrganizerDBMS.sqlite";
     private DatabaseConnection() {
     }
 
