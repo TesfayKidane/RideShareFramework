@@ -1,39 +1,43 @@
 package eventorganizerframework.database;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class SimpleSQLPanel extends SQLPanel {
+public class SimpleSQLExecutor extends SQLExecutor {
+	private Connection connection;
 
-	@Override
 	public void connectToDatabase() {
-		// TODO Auto-generated method stub
-		executor.connectToDatabase();
+
+		connection = dbConnectionFactory.createConnection("jdbc:mysql://localhost/banking", "acm", "1234");
+
 	}
 
-	public SimpleSQLPanel(SQLExecutor executor) {
-		super(executor);
-
-		// TODO Auto-generated constructor stub
-	}
-
-	// private SQLExecutor executor = new SimpleSQLExecutor();
 	@Override
 	public void update(String query) {
 		// TODO Auto-generated method stub
-		executor.update(query);
+		try {
+			Statement stmt = connection.createStatement();
+
+			stmt.executeUpdate(query);
+
+			stmt.close();
+			connection.close();
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	@Override
 	public ResultSet select(String query) {
 		// TODO Auto-generated method stub
-		return executor.select(query);
+		return null;
 	}
 
 	@Override
 	public void executeSP(String statement) {
 		// TODO Auto-generated method stub
-		executor.executeSP(statement);
 
 	}
 
