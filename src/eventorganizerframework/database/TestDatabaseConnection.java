@@ -7,6 +7,8 @@ package eventorganizerframework.database;
 
 import java.sql.SQLException;
 
+import eventorganizerframework.database.sql.DatabaseConnection;
+
 /**
  *
  * @author Tesfay

@@ -1,4 +1,4 @@
-package eventorganizerframework.database;
+package eventorganizerframework.database.sql;
 
 import java.sql.ResultSet;
 import java.sql.Statement;

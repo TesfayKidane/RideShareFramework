@@ -1,4 +1,4 @@
-package eventorganizerframework.database;
+package eventorganizerframework.database.sql;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,7 +9,7 @@ public class SimpleSQLExecutor extends SQLExecutor {
 
 	public void connectToDatabase() {
 
-		connection = dbConnectionFactory.createConnection("jdbc:mysql://localhost/banking", "acm", "1234");
+		connection = dbConnectionFactory.createConnection();
 
 	}
 
