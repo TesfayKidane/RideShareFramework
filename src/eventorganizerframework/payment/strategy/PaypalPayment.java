@@ -1,4 +1,4 @@
-package eventorganizerframework.payment;
+package eventorganizerframework.payment.strategy;
 
 public class PaypalPayment implements Payment {
 

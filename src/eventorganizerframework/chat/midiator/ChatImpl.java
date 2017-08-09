@@ -1,4 +1,4 @@
-package eventorganizerframework.chat;
+package eventorganizerframework.chat.midiator;
 
 import java.util.ArrayList;
 import java.util.List;

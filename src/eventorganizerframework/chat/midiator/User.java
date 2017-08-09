@@ -1,4 +1,4 @@
-package eventorganizerframework.chat;
+package eventorganizerframework.chat.midiator;
 
 public abstract class User {
 	private String userName;

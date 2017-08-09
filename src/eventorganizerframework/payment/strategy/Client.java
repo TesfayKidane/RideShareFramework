@@ -1,4 +1,4 @@
-package eventorganizerframework.payment;
+package eventorganizerframework.payment.strategy;
 
 import java.util.Scanner;
 

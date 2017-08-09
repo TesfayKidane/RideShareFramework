@@ -1,4 +1,4 @@
-package eventorganizerframework.chat;
+package eventorganizerframework.chat.midiator;
 
 public interface Chat {
 	public void addUser(User user);

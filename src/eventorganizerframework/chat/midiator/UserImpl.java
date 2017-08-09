@@ -1,4 +1,4 @@
-package eventorganizerframework.chat;
+package eventorganizerframework.chat.midiator;
 
 public class UserImpl  extends User{
 

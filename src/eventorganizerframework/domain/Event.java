@@ -10,15 +10,12 @@ import java.sql.Date;
 import java.util.List;
 import java.util.Objects;
 
-
-
 /**
  *
  * @author Tesfay
  */
 public class Event {
-    
-    private int eventId;
+    private Long eventId;
     private String eventName;
     private String eventDescription;
     private User eventCreator;
@@ -32,11 +29,19 @@ public class Event {
     private java.awt.Image eventLogo;
     private EventStatus eventStatus;
 
-    public int getEventId() {
+    public EventStatus getEventStatus() {
+		return eventStatus;
+	}
+
+	public void setEventStatus(EventStatus eventStatus) {
+		this.eventStatus = eventStatus;
+	}
+
+	public Long getEventId() {
         return eventId;
     }
 
-    public void setEventId(int eventId) {
+    public void setEventId(Long eventId) {
         this.eventId = eventId;
     }
 
@@ -128,12 +133,9 @@ public class Event {
         this.eventLogo = eventLogo;
     }
     
-    
-
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + this.eventId;
         hash = 59 * hash + Objects.hashCode(this.eventName);
         hash = 59 * hash + Objects.hashCode(this.eventDescription);
         hash = 59 * hash + Objects.hashCode(this.eventStartDate);

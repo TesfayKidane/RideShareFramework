@@ -1,4 +1,4 @@
-package eventorganizerframework.payment;
+package eventorganizerframework.payment.strategy;
 
 public class PaymentModel {
 	private Payment paymentStrategy;
