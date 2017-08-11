@@ -3,13 +3,15 @@ package eventorganizerframework.proxy;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RealSubjectImpl<Entity> implements RealSubject<Entity> {
+public class RealSubjectImpl<Person> implements RealSubject<Person> {
 
+
+	
 	@Override
-	public List<Entity> request(Object input) {
+	public List<Person> request(SearchInput input) {
 		// TODO Auto-generated method stub
-		List<Entity> list = new ArrayList<Entity>();
-		return list;
+		
+		return (List<Person>)new PersonDao().getPeople(input);
 	}
 
 }

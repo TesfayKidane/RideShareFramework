@@ -5,32 +5,35 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
-
-
 public class CachingProxy<E> implements RealSubject<E> {
-	public void setChecker(ConditionChecker checker) {
-		this.checker = checker;
-	}
 
 	private RealSubject<E> realSubject;
-	private ConditionChecker checker;
+	private boolean isAccessAllowed;
 
 	private HashMap<Object, List<E>> cache = new HashMap<>();
 	List<E> cachedEntities = new ArrayList<E>();
 
-	public CachingProxy(Object key) {
+	public CachingProxy() {
 		// find in the hashmap and set isAllowedToConnectToDB
-		cachedEntities = (List<E>) cache.get(key.toString());
+		
 
 		realSubject = new RealSubjectImpl<E>();
 
 	}
 
-	public List<E> request(Object input) {
-		if (checker.check()) {
+	public List<E> request(SearchInput input) {
+		cachedEntities = (List<E>) cache.get(input.toString());
+		if (cachedEntities == null) {
+			isAccessAllowed = true;
+		} else {
+			isAccessAllowed = false;
+			System.out.println("retrieved from cach..");
+		}
+		if (isAccessAllowed) {
+			
 			List<E> entities = realSubject.request(input);
 			if (cache.size() > 1000) {
-
+				
 				Random random = new Random();
 				List<Object> keys = new ArrayList<Object>(cache.keySet());
 				Object randomKey = keys.get(random.nextInt(keys.size()));
@@ -38,6 +41,7 @@ public class CachingProxy<E> implements RealSubject<E> {
 
 			}
 			cache.put(input.toString(), entities);
+			System.out.println("retrieved from Dao..");
 			return entities;
 		}
 
