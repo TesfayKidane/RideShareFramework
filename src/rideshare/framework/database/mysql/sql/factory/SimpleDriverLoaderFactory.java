@@ -1,7 +1,7 @@
 package rideshare.framework.database.mysql.sql.factory;
 
-import rideshare.framework.database.mysql.sql.IDriverLoader;
-import rideshare.framework.database.mysql.sql.SimpleDriverLoader;
+import rideshare.framework.database.generic.sql.IDriverLoader;
+import rideshare.framework.database.generic.sql.SimpleDriverLoader;
 
 public class SimpleDriverLoaderFactory implements DriverLoaderFactory {
 

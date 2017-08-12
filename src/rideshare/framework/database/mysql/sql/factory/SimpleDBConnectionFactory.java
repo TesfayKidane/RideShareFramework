@@ -1,13 +1,19 @@
 package rideshare.framework.database.mysql.sql.factory;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import rideshare.framework.database.mysql.sql.IDriverLoader;
-import rideshare.framework.database.mysql.sql.PropertyFileReader;
+import rideshare.framework.database.generic.sql.IDriverLoader;
+import rideshare.framework.database.generic.sql.PropertyFileReader;
+
 
 public class SimpleDBConnectionFactory implements DBConnectionFactory {
+	public void setDriverLoader(IDriverLoader driverLoader) {
+		this.driverLoader = driverLoader;
+	}
+
 	IDriverLoader driverLoader;
 	private static DBConnectionFactory factory = new SimpleDBConnectionFactory();
 

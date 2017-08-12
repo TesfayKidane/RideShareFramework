@@ -1,4 +1,4 @@
-package rideshare.framework.database.mysql;
+package rideshare.framework.database.generic;
 
 
 

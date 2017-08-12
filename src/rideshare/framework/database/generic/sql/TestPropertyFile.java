@@ -1,4 +1,4 @@
-package rideshare.framework.database.mysql.sql;
+package rideshare.framework.database.generic.sql;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

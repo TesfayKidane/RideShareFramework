@@ -1,4 +1,4 @@
-package rideshare.framework.database.mysql.sql;
+package rideshare.framework.database.generic.sql;
 
 import java.sql.ResultSet;
 
@@ -11,7 +11,8 @@ public abstract class SQLExecutor {
 
 	public abstract ResultSet select(String query);
 
-	public abstract void executeSP(String statement);
+	
 	
 	public abstract void connectToDatabase();
+	public abstract void closeDBConnection();
 }

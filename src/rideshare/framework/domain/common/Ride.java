@@ -159,10 +159,6 @@ public class Ride extends AEntity {
 		this.rideOwner = rideOwner;
 	}
 
-	public void setRemainingSeats(int remainingSeats) {
-		this.remainingSeats = remainingSeats;
-	}
-
 	public void addCarImages(String image) {
 		this.carImages.add(image);
 	}

@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rideshare.framework.database.mysql;
+package rideshare.framework.database.generic;
 
 import java.sql.SQLException;
 
-import rideshare.framework.database.mysql.sql.DatabaseConnection;
+import rideshare.framework.database.generic.sql.DatabaseConnection;
 
 /**
  *

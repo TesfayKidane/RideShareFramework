@@ -1,23 +1,27 @@
 package rideshare.framework.proxy;
 
 public class SearchInput {
-public String getName() {
+	public String getName() {
 		return name;
 	}
+
 	public String getCountry() {
 		return country;
 	}
-@Override
+
+	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return (name+country).toString();
+		return (name + country).toString();
 	}
-String name;
-String country;
-public SearchInput(String name, String country) {
-	
-	this.name = name;
-	this.country = country;
-}
+
+	String name;
+	String country;
+
+	public SearchInput(String name, String country) {
+
+		this.name = name;
+		this.country = country;
+	}
 
 }

@@ -1,9 +1,15 @@
-package rideshare.framework.database.mysql.sql;
+package rideshare.framework.database.generic.sql;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class SimpleSQLPanel extends SQLPanel {
+
+	@Override
+	public void closeDBConnection() {
+		executor.closeDBConnection();
+		
+	}
 
 	@Override
 	public void connectToDatabase() {
@@ -30,11 +36,8 @@ public class SimpleSQLPanel extends SQLPanel {
 		return executor.select(query);
 	}
 
-	@Override
-	public void executeSP(String statement) {
-		// TODO Auto-generated method stub
-		executor.executeSP(statement);
-
-	}
+	
+	
+	
 
 }

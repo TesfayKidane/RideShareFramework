@@ -5,8 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
+
+
 public class CachingProxy<E> implements RealSubject<E> {
 
+		
+	//proxy pattern
 	private RealSubject<E> realSubject;
 	private boolean isAccessAllowed;
 
@@ -14,12 +18,16 @@ public class CachingProxy<E> implements RealSubject<E> {
 	List<E> cachedEntities = new ArrayList<E>();
 
 	public CachingProxy() {
+			
 		// find in the hashmap and set isAllowedToConnectToDB
 		
 
 		realSubject = new RealSubjectImpl<E>();
 
 	}
+	
+	
+	
 
 	public List<E> request(SearchInput input) {
 		cachedEntities = (List<E>) cache.get(input.toString());
@@ -49,5 +57,10 @@ public class CachingProxy<E> implements RealSubject<E> {
 		// loop through hashmap and return the object
 
 	}
+
+	
+	
+	
+	
 
 }

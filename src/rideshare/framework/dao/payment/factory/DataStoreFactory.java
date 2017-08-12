@@ -3,8 +3,6 @@ package rideshare.framework.dao.payment.factory;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.google.api.services.sqladmin.model.User;
-
 import rideshare.framework.dao.AccountManager;
 import rideshare.framework.dao.BalanceManager;
 import rideshare.framework.dao.IDataManager;
@@ -24,7 +22,7 @@ public class DataStoreFactory implements IDataStoreFactory {
         stores.put(Account.class, new AccountManager());
         stores.put(Balance.class, new BalanceManager());
         stores.put(Transaction.class, new TransactionManager());
-        stores.put(User.class, new UserManager());
+        stores.put(rideshare.framework.domain.common.User.class, new UserManager());
         stores.put(Ride.class, new RideManager());
     }
 
