@@ -5,11 +5,13 @@ import java.sql.Date;
 import rideshare.framework.domain.common.Ride;
 
 public interface IRideBuilder {
-	public final Ride ride = new Ride();
+	public final Ride ride = null;
 	public abstract void setRideType();
 	public abstract void calculatePrice();
 	public default Ride getSampleRide(){
-		ride.setId(Long.parseLong(String.valueOf(Math.random())));
+		Ride ride = new Ride();
+		ride = new Ride();
+		ride.setId(0l);
 		ride.setAvailableSeats(5);
 		ride.setCreated(Date.valueOf("2017-10-12"));
 		ride.setDescription("Enjoy the ride");

@@ -1,4 +1,4 @@
-package rideshare.framework.cache.proxy;
+package rideshare.framework.cache.decorator;
 
 import java.util.ArrayList;
 import java.util.List;

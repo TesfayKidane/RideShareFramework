@@ -1,6 +1,6 @@
-package rideshare.framework.cache.proxy;
+package rideshare.framework.cache.decorator;
 
-public class LfuCacheEntry<V> extends ACacheEntry<V>{
+public class LFUCacheEntry<V> extends ACacheEntry<V>{
 	
 	private long useFrequency;
 	private long lastUsedInMilliSecond;
