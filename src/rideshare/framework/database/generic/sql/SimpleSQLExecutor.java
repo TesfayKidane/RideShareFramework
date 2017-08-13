@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import rideshare.framework.database.mysql.sql.factory.DBConnectionFactory;
+import rideshare.framework.database.generic.sql.factory.DBConnectionFactory;
 
 public class SimpleSQLExecutor extends SQLExecutor {
 	

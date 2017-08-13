@@ -10,8 +10,6 @@ import java.util.Random;
 import rideshare.framework.proxy.RealSubject;
 import rideshare.framework.proxy.SearchInput;
 
-
-
 public class CachingProxy<E> implements RealSubject<E>, ResourceObserver<E> {
 
 	// proxy pattern
@@ -22,11 +20,7 @@ public class CachingProxy<E> implements RealSubject<E>, ResourceObserver<E> {
 	List<E> cachedEntities = new ArrayList<E>();
 
 	public CachingProxy() {
-
-		// find in the hashmap and set isAllowedToConnectToDB
-
 		realSubject = new RealSubjectImpl<E>();
-
 	}
 
 	// observer pattern
@@ -44,7 +38,6 @@ public class CachingProxy<E> implements RealSubject<E>, ResourceObserver<E> {
 			System.out.println("retrieved from cach..");
 		}
 		if (isAccessAllowed) {
-
 			List<E> entities = realSubject.request(input);
 			if (cache.size() > 1000) {
 
@@ -52,7 +45,6 @@ public class CachingProxy<E> implements RealSubject<E>, ResourceObserver<E> {
 				List<Object> keys = new ArrayList<Object>(cache.keySet());
 				Object randomKey = keys.get(random.nextInt(keys.size()));
 				cache.remove(randomKey);
-
 			}
 			cache.put(input.toString(), entities);
 			System.out.println("retrieved from Dao..");
@@ -60,49 +52,35 @@ public class CachingProxy<E> implements RealSubject<E>, ResourceObserver<E> {
 		}
 
 		return cachedEntities;
-		// loop through hashmap and return the object
-
 	}
 
 	// observer pattern
 	@Override
 	public void updateCache(E removedEntity) {
-		// TODO Auto-generated method stub
-		// remove the removedRide from cache
 		int keyCounter = -1;
 		int foundKey = -1;
-		
+
 		Iterator it = cache.entrySet().iterator();
-	    while (it.hasNext()) {
-	    
-	    	keyCounter++;
-	    	Map.Entry pair = (Map.Entry)it.next();
-//	        System.out.println(pair.getKey() + " = " + pair.getValue());
-	    	List<E> Entities = (List<E>) pair.getValue();
-	    	Object key = pair.getKey();
-	    	boolean isFound=false;
-	    			
-				// cachedEntities.remove(removedEntity);
-				
-				for (E entity : Entities) {
-					
-					if (entity.toString().equals(removedEntity.toString())) {
-						cache.remove(key);
-						isFound=true;
-						break;
-					}
-				}
-				if (isFound) {
+		while (it.hasNext()) {
+			keyCounter++;
+			Map.Entry pair = (Map.Entry) it.next();
+			List<E> Entities = (List<E>) pair.getValue();
+			Object key = pair.getKey();
+			boolean isFound = false;
+
+			for (E entity : Entities) {
+
+				if (entity.toString().equals(removedEntity.toString())) {
+					cache.remove(key);
+					isFound = true;
 					break;
 				}
 			}
-//		it.remove(); // avoids a ConcurrentModificationException
-//				cache.remove(foundKey);
-//				cachedEntities = (List<E>) cache.get(foundKey);
-				System.out.println("Proxy Cache was updated after removing the object from the resource.");
+			if (isFound) {
+				break;
 			}
-		
-
+		}
+		System.out.println("Proxy Cache was updated after removing the object from the resource.");
 	}
 
-
+}

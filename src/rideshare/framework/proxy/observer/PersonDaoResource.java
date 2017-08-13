@@ -40,7 +40,7 @@ public class PersonDaoResource extends ResourceSubjectImpl<PersonDao> {
 	public List<Person> getPeople(SearchInput input) {
 		List<Person> results = new ArrayList<Person>();
 		for (Person person : people) {
-			if (person.getName().equals(input.getName()) && person.getCountry().equals(input.getCountry())) {
+			if (person.getName().equals(input.getSearchKeyword1()) && person.getCountry().equals(input.getSearchKeyword2())) {
 				results.add(person);
 			}
 		}

@@ -1,6 +1,6 @@
 package rideshare.framework.authentication.exception.CoR;
 
-public class ErrorLogger extends AbstractExeption {
+public class ErrorLogger extends AbstractLogger {
 	public ErrorLogger(int level){
 	      this.level = level;
 	   }

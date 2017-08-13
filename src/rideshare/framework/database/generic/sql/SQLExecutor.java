@@ -2,8 +2,8 @@ package rideshare.framework.database.generic.sql;
 
 import java.sql.ResultSet;
 
-import rideshare.framework.database.mysql.sql.factory.DBConnectionFactory;
-import rideshare.framework.database.mysql.sql.factory.SimpleDBConnectionFactory;
+import rideshare.framework.database.generic.sql.factory.DBConnectionFactory;
+import rideshare.framework.database.generic.sql.factory.SimpleDBConnectionFactory;
 
 public abstract class SQLExecutor {
 	DBConnectionFactory dbConnectionFactory = SimpleDBConnectionFactory.getFactory();

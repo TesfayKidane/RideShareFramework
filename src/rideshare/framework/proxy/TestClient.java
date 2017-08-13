@@ -4,7 +4,7 @@ import java.util.List;
 
 public class TestClient {
 public static void main(String[] args) {
-	CachingProxy<Person> proxy = new CachingProxy<Person>();
+	CacheProxy<Person> proxy = new CacheProxy<Person>();
 	SearchInput input = new SearchInput("Mohammad","Iran");
 	
 	//first request

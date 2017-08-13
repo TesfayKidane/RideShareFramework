@@ -1,31 +1,27 @@
 package rideshare.framework.authentication.exception.CoR;
 
 public class ChainPatternDemo {
-	
-	private static AbstractExeption getChainOfLoggers(){
 
-		AbstractExeption errorLogger = new ErrorLogger(AbstractExeption.ERROR);		 
-		AbstractExeption fileLogger = new FileLogger(AbstractExeption.DEBUG);
-		AbstractExeption consoleLogger = new ConsoleLogger(AbstractExeption.INFO);
-	      
+	private static AbstractLogger getChainOfLoggers() {
 
-	      errorLogger.setNextLogger(fileLogger);
-	      fileLogger.setNextLogger(consoleLogger);
+		AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);
+		AbstractLogger fileLogger = new FileLogger(AbstractLogger.DEBUG);
+		AbstractLogger consoleLogger = new ConsoleLogger(AbstractLogger.INFO);
 
-	      return errorLogger;	
-	   }
+		errorLogger.setNextLogger(fileLogger);
+		fileLogger.setNextLogger(consoleLogger);
+
+		return errorLogger;
+	}
 
 	public static void main(String[] args) {
-		AbstractExeption loggerChain = getChainOfLoggers();
+		AbstractLogger loggerChain = getChainOfLoggers();
 
-	      loggerChain.logMessage(AbstractExeption.INFO, 
-	         "This is an information.");
+		loggerChain.logMessage(AbstractLogger.INFO, "This is an information.");
 
-	      loggerChain.logMessage(AbstractExeption.DEBUG, 
-	         "This is an debug level information.");
+		loggerChain.logMessage(AbstractLogger.DEBUG, "This is an debug level information.");
 
-	      loggerChain.logMessage(AbstractExeption.ERROR, 
-	         "This is an error information.");
+		loggerChain.logMessage(AbstractLogger.ERROR, "This is an error information.");
 
 	}
 

@@ -1,4 +1,4 @@
-package rideshare.framework.database.mysql.sql.factory;
+package rideshare.framework.database.generic.sql.factory;
 
 
 import java.sql.Connection;

@@ -1,6 +1,6 @@
 package rideshare.framework.authentication.exception.CoR;
 
-public class FileLogger extends AbstractExeption {
+public class FileLogger extends AbstractLogger {
 	
 	public FileLogger(int level){
 	      this.level = level;

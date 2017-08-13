@@ -1,4 +1,4 @@
-package rideshare.framework.database.mysql.sql.factory;
+package rideshare.framework.database.generic.sql.factory;
 
 import rideshare.framework.database.generic.sql.IDriverLoader;
 import rideshare.framework.database.generic.sql.SimpleDriverLoader;
