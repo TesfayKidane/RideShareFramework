@@ -1,23 +1,14 @@
-package rideshare.framework.chat.midiator;
+package rideshare.framework.dao.chat;
+
+import rideshare.framework.dao.commondomain.User;
 
 public class Client {
 	
 	public static void main(String[] args) {
 
-		Chat chatMenbers = new ChatImpl();
-		UserImpl lulu = new UserImpl("Lwam", chatMenbers);
-		UserImpl fufu = new UserImpl("febu", chatMenbers);
-		UserImpl mohammed = new UserImpl("Mohammed", chatMenbers);
-		UserImpl tesfay = new UserImpl("Tesfay", chatMenbers);
-		chatMenbers.addUser(mohammed);
-		chatMenbers.addUser(lulu);
-		chatMenbers.addUser(fufu);
-		chatMenbers.addUser(tesfay);
-
-		lulu.sendMessage("how are u guys ?");
-		fufu.sendPrivateMessage(lulu, "gumama");
-		chatMenbers.removeUser(tesfay);
-		mohammed.sendMessage("let's start after 5 mint");
+		ChatRoomMediator chatMenbers = new ChatRoomMediatorImpl();
+		
+		
 
 	}
 
