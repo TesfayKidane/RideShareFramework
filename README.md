@@ -1,6 +1,6 @@
 # RideShareFramework
 A framework designed using several design patterns to help developers make ride sharing applications.  
-# List of patterns used
+### List of patterns used
 1. Singlton
 2. Factory
 3. Facad
